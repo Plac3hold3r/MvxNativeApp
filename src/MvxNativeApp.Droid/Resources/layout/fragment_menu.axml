@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.NavigationView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/navigation_view"
+    android:layout_height="match_parent"
+    android:layout_width="wrap_content"
+    android:layout_gravity="start"
+    android:theme="@style/NavigationViewStyle"
+    android:fitsSystemWindows="true"
+    local:headerLayout="@layout/fragment_menuheader"
+    local:menu="@menu/navigation_drawer">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/appVersion"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:textSize="12dp"
+            android:gravity="center"
+            android:text="Version: 1.0.0" />
+    </LinearLayout>
+</android.support.design.widget.NavigationView>

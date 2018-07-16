@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+    <!-- Base theme applied regardless of API level -->
+    <style name="AppTheme.Base" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="colorPrimary">@color/primaryColor</item>
+        <item name="colorPrimaryDark">@color/primaryDarkColor</item>
+        <item name="colorAccent">@color/accentColor</item>
+        <item name="colorControlNormal">@color/primaryColor</item>
+        <item name="colorControlActivated">@color/accentColor</item>
+        <item name="colorControlHighlight">@color/accentColor</item>
+        <item name="windowActionModeOverlay">false</item>
+    </style>
+
+    <!-- Default App theme applied if no resource style overrides for specific API level -->
+    <style name="AppTheme" parent="AppTheme.Base">
+    </style>
+
+    <!-- App Splash Screen Theme -->
+    <style name="AppTheme.Splash.Base" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">@drawable/splash_screen</item>
+    </style>
+
+    <!-- Navigation style -->
+    <style name="NavigationViewStyle">
+        <item name="android:textSize">18dp</item>
+        <!-- menu item text size-->
+        <item name="android:listPreferredItemHeightSmall">60dp</item>
+        <!-- menu item height-->
+    </style>
+</resources>
