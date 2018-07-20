@@ -1,14 +1,10 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using Foundation;
 using MvvmCross.iOS.Support.XamarinSidebar;
 using MvxNativeApp.Core.ViewModels.Main;
 using UIKit;
 using Cirrious.FluentLayouts.Touch;
-using MvvmCross.Binding.BindingContext;
 using CoreGraphics;
+using System.Threading.Tasks;
 
 namespace MvxNativeApp.iOS.Views.Main
 {
@@ -36,21 +32,31 @@ namespace MvxNativeApp.iOS.Views.Main
             homeButton.SetTitle("Home", UIControlState.Normal);
             homeButton.BackgroundColor = UIColor.White;
             homeButton.SetTitleColor(UIColor.Black, UIControlState.Normal);
-            //set.Bind(homeButton).To(vm => vm.ShowHomeCommand);
+
+            homeButton.TouchDown += delegate
+            {
+                Task.Run(async () => await ViewModel.Navigate<MainViewModel>());
+            };
 
             var settingsButton = new UIButton(new CGRect(0, 100, 320, 40));
             settingsButton.SetTitle("Settings", UIControlState.Normal);
             settingsButton.BackgroundColor = UIColor.White;
             settingsButton.SetTitleColor(UIColor.Black, UIControlState.Normal);
-            //set.Bind(settingsButton).To(vm => vm.ShowSettingCommand);
+
+            settingsButton.TouchDown += delegate
+            {
+                Task.Run(async () => await ViewModel.Navigate<MainViewModel>());
+            };
 
             var helpButton = new UIButton(new CGRect(0, 100, 320, 40));
             helpButton.SetTitle("Help & Feedback", UIControlState.Normal);
             helpButton.BackgroundColor = UIColor.White;
             helpButton.SetTitleColor(UIColor.Black, UIControlState.Normal);
-            //set.Bind(helpButton).To(vm => vm.ShowHelpCommand);
 
-            //set.Apply();
+            helpButton.TouchDown += delegate
+            {
+                Task.Run(async () => await ViewModel.Navigate<MainViewModel>());
+            };
 
             Add(scrollView);
 

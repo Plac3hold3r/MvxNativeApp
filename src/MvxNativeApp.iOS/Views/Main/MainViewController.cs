@@ -1,15 +1,9 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using Cirrious.FluentLayouts.Touch;
-using Foundation;
-using MvvmCross;
-using MvvmCross.Core.Navigation;
 using MvvmCross.iOS.Support.XamarinSidebar;
 using MvvmCross.Platforms.Ios.Presenters.Attributes;
 using MvxNativeApp.Core.ViewModels.Main;
+using MvxNativeApp.iOS.Styles;
 using UIKit;
 
 namespace MvxNativeApp.iOS.Views.Main
@@ -19,11 +13,12 @@ namespace MvxNativeApp.iOS.Views.Main
     public class MainViewController : BaseViewController<MainViewModel>
     {
         private UILabel _labelWelcome, _labelMessage;
+        private UIButton _button;
 
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-            ViewModel.ShowMenu();
+            //ViewModel.ShowMenu();
         }
                 
         protected override void CreateView()
@@ -41,6 +36,14 @@ namespace MvxNativeApp.iOS.Views.Main
                 TextAlignment = UITextAlignment.Center
             };
             Add(_labelMessage);
+
+            _button = new UIButton
+            {
+                BackgroundColor = ColorPalette.PrimaryLight
+            };
+            _button.SetTitleColor(ColorPalette.Primary, UIControlState.Normal);
+            _button.SetTitle("CLICK", UIControlState.Normal);
+            Add(_button);
         }
 
         protected override void LayoutView()
@@ -51,8 +54,21 @@ namespace MvxNativeApp.iOS.Views.Main
                 _labelWelcome.WithSameCenterY(View),
 
                 _labelMessage.Below(_labelWelcome, 10f),
-                _labelMessage.WithSameWidth(View)
+                _labelMessage.WithSameWidth(View),
+
+                _button.Below(_labelMessage, 10f),
+                _button.WithSameWidth(View)
            });
+        }
+
+        protected override void BindView()
+        {
+            base.BindView();
+
+            _button.TouchDown += delegate
+            {
+                Task.Run(async () => await ViewModel.ShowMenu());
+            };
         }
     }
 }

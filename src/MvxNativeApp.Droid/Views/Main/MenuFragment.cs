@@ -1,15 +1,3 @@
-/***************************************************************************
- * Copyright (C) 2018 Smart software s.r.o. - All Rights Reserved
- *
- * This file is part of MyMarkeeta
- *
- * Unauthorized copying of this file, via any medium is strictly prohibited
- * Proprietary and confidential
- *
- * Written by Martin Pěnkava, martin.penkava@smart-software.cz.
- *
- **************************************************************************/
-
 using System;
 using System.Threading.Tasks;
 using Android.OS;
@@ -37,15 +25,6 @@ namespace MvxNativeApp.Droid.Views.Main
             _navigationView.SetNavigationItemSelectedListener(this);
 
             var navigationActivity = ParentActivity as INavigationActivity;
-
-            //var drawer = navigationActivity?.Drawer;
-            //if (drawer != null)
-            //{
-            //    drawer.DrawerOpened += delegate
-            //    {
-            //        SetMenuLanguage();
-            //    };
-            //}
 
             InitializeMenu();
 

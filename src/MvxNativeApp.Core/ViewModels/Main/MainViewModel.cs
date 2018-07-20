@@ -1,3 +1,4 @@
+using System.Threading.Tasks;
 using MvvmCross;
 using MvvmCross.Navigation;
 
@@ -13,9 +14,9 @@ namespace MvxNativeApp.Core.ViewModels.Main
             Title = nameof(MainViewModel);
         }
 
-        public void ShowMenu()
+        public async Task ShowMenu()
         {
-            _navigationService.Navigate<MenuViewModel>();
+            await _navigationService.Navigate<MenuViewModel>();
         }
     }
 }

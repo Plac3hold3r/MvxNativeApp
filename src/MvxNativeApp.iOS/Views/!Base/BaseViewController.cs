@@ -1,7 +1,6 @@
 using Cirrious.FluentLayouts.Touch;
 using MvvmCross.Platforms.Ios.Views;
 using MvvmCross.ViewModels;
-using MvxNativeApp.Core.ViewModels;
 using MvxNativeApp.iOS.Styles;
 using UIKit;
 
