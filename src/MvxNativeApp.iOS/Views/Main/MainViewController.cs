@@ -1,7 +1,7 @@
 using System.Threading.Tasks;
 using Cirrious.FluentLayouts.Touch;
-using MvvmCross.iOS.Support.XamarinSidebar;
 using MvvmCross.Platforms.Ios.Presenters.Attributes;
+using MvvmCross.Plugin.Sidebar;
 using MvxNativeApp.Core.ViewModels.Main;
 using MvxNativeApp.iOS.Styles;
 using UIKit;
@@ -20,7 +20,7 @@ namespace MvxNativeApp.iOS.Views.Main
             base.ViewDidLoad();
             //ViewModel.ShowMenu();
         }
-                
+
         protected override void CreateView()
         {
             _labelWelcome = new UILabel

@@ -1,10 +1,10 @@
 using Foundation;
-using MvvmCross.iOS.Support.XamarinSidebar;
 using MvxNativeApp.Core.ViewModels.Main;
 using UIKit;
 using Cirrious.FluentLayouts.Touch;
 using CoreGraphics;
 using System.Threading.Tasks;
+using MvvmCross.Plugin.Sidebar;
 
 namespace MvxNativeApp.iOS.Views.Main
 {
