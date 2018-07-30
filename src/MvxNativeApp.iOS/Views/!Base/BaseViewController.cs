@@ -17,13 +17,16 @@ namespace MvxNativeApp.iOS.Views
 
             EdgesForExtendedLayout = UIRectEdge.None;
 
-            NavigationController.NavigationBar.BarStyle = UIBarStyle.Black;
-            NavigationController.NavigationBar.Translucent = false;
-            NavigationController.NavigationBar.Hidden = false;
-            NavigationController.NavigationBar.BarTintColor = ColorPalette.Primary;
-            NavigationController.NavigationBar.TintColor = UIColor.White;
+            if (NavigationController != null)
+            {
+                NavigationController.NavigationBar.BarStyle = UIBarStyle.Black;
+                NavigationController.NavigationBar.Translucent = false;
+                NavigationController.NavigationBar.Hidden = false;
+                NavigationController.NavigationBar.BarTintColor = ColorPalette.Primary;
+                NavigationController.NavigationBar.TintColor = UIColor.White;
 
-            NavigationController.SetNeedsStatusBarAppearanceUpdate();
+                NavigationController.SetNeedsStatusBarAppearanceUpdate();
+            }
 
             CreateView();
 

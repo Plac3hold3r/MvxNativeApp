@@ -1,6 +1,5 @@
 using System.Threading.Tasks;
 using Cirrious.FluentLayouts.Touch;
-using MvvmCross.Platforms.Ios.Presenters.Attributes;
 using MvvmCross.Plugin.Sidebar;
 using MvxNativeApp.Core.ViewModels.Main;
 using MvxNativeApp.iOS.Styles;
@@ -8,7 +7,6 @@ using UIKit;
 
 namespace MvxNativeApp.iOS.Views.Main
 {
-    [MvxRootPresentation(WrapInNavigationController = true)]
     [MvxSidebarPresentation(MvxPanelEnum.Center, MvxPanelHintType.ResetRoot, true)]
     public class MainViewController : BaseViewController<MainViewModel>
     {

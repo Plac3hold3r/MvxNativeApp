@@ -82,8 +82,6 @@ namespace MvxNativeApp.iOS.Views.Main
         {
             Title = "Left Menu View";
             base.ViewWillAppear(animated);
-
-            NavigationController.NavigationBarHidden = true;
         }
     }
 }
